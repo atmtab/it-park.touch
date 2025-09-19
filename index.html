@@ -118,7 +118,6 @@
 
     <div class="header">
         <div class="logo">IT PARK UZBEKISTAN</div>
-        <div class="subtitle">Технопарк программного обеспечения и информационных технологий</div>
     </div>
 
     <div class="container">
@@ -370,7 +369,7 @@
     <div id="aiModal" class="modal">
         <div class="modal-content">
             <div class="modal-header">
-                <h2 class="modal-title">ИИ Консультант</h2>
+                <h2 class="modal-title">FAQ</h2>
                 <span class="close" onclick="closeModal('aiModal')" aria-label="Закрыть">&times;</span>
             </div>
             <div class="modal-body">
@@ -378,9 +377,14 @@
                     <div class="card-icon" aria-hidden="true" style="margin-bottom:10px;">
                         <svg class="icon" viewBox="0 0 24 24" role="img" aria-label="ИИ консультант"><use href="#icon-robot"></use></svg>
                     </div>
-                    <h3>Искусственный интеллект консультант</h3>
+                    <h3>FAQ</h3>
+                    <button class="btn" onclick="showIframe('https://my.it-park.uz/faq/')">Часто задаваемые вопросы</button>
                     <p style="margin:20px 0;">Получите персональные консультации и ответы на ваши вопросы от нашего ИИ помощника</p>
-                    <button class="btn" onclick="showIframe('https://ai.it-park.uz/')">Открыть ИИ Консультант</button>
+                </div>
+                <div class="qr-section">
+                    <h3>Открыть чат с ИИ консультантом</h3>
+                    <p>Отсканируйте QR-код для подачи заявки</p>
+                    <div class="qr-code"><img src="ai-assistant.gif" alt="qr code"></div>
                 </div>
             </div>
         </div>
