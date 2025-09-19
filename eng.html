@@ -6,18 +6,28 @@
     <title>IT Park Uzbekistan - Touch Panel (SVG Icons)</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, #f8fffe 0%, #e8f5f3 100%); min-height: 100vh; color: #2c3e50; touch-action: manipulation; }
-        .header { position: relative; text-align: center; padding: 40px 20px; background: white; box-shadow: 0 4px 20px rgba(0,0,0,0.1); margin-bottom: 40px; }
-        .logo { font-size: 3rem; font-weight: 700; color: #27ae60; margin-bottom: 10px; text-shadow: 2px 2px 4px rgba(0,0,0,0.1); }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f8fffe 0%, #e8f5f3 100%);
+            min-height: 100vh; color: #2c3e50; touch-action: manipulation;
+        }
+        .header { position: relative; text-align: center; padding: 40px 20px; background: white;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1); margin-bottom: 40px; }
+        .logo { font-size: 3rem; font-weight: 700; color: #27ae60; margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1); }
         .subtitle { font-size: 1.5rem; color: #7f8c8d; font-weight: 300; }
+
+        /* Language switcher */
         .topbar { position: absolute; right: 16px; top: 16px; display: flex; gap: 12px; align-items: center; }
         .lang-switch a { display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 24px; border-radius: 4px; overflow: hidden; border: 1px solid #e2e8f0; background: #fff; transition: transform .15s ease, box-shadow .15s ease; }
         .lang-switch a:hover { transform: translateY(-1px); box-shadow: 0 6px 16px rgba(0,0,0,0.12); }
         .lang-switch svg { display: block; width: 100%; height: 100%; }
         .lang-switch .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+
         .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; padding: 20px 0; }
-        .card { background: white; border-radius: 20px; padding: 40px 30px; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.1); transition: all 0.3s ease; cursor: pointer; position: relative; overflow: hidden; }
+        .card { background: white; border-radius: 20px; padding: 40px 30px; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease; cursor: pointer; position: relative; overflow: hidden; }
         .card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(39,174,96,0.2); }
         .card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg,#27ae60,#2ecc71); }
         .card-icon { margin-bottom: 20px; display: flex; align-items: center; justify-content: center; }
@@ -52,34 +62,135 @@
         .contact-info { background: #f8f9fa; padding: 25px; border-radius: 15px; margin: 20px 0; }
         .contact-item { display: flex; align-items: center; margin: 15px 0; font-size: 1.1rem; }
         .contact-icon { margin-right: 15px; width: 30px; display: flex; align-items: center; justify-content: center; }
-        @media (max-width: 768px) { .grid { grid-template-columns: 1fr; } .modal-content { width: 95%; margin: 5% auto; } .calc-result { grid-template-columns: 1fr; } .icon { width: 56px; height: 56px; } .topbar { right: 12px; top: 12px; } .lang-switch a { width: 32px; height: 22px; } }
+        @media (max-width: 768px) {
+            .grid { grid-template-columns: 1fr; }
+            .modal-content { width: 95%; margin: 5% auto; }
+            .calc-result { grid-template-columns: 1fr; }
+            .icon { width: 56px; height: 56px; }
+            .topbar { right: 12px; top: 12px; }
+            .lang-switch a { width: 32px; height: 22px; }
+        }
     </style>
 </head>
 <body>
     <!-- SVG Sprite -->
     <svg xmlns="http://www.w3.org/2000/svg" style="position:absolute;width:0;height:0;visibility:hidden" aria-hidden="true">
         <defs>
-            <symbol id="icon-clipboard" viewBox="0 0 24 24"><path d="M9 3h6a2 2 0 0 1 2 2h2a2 2 0 0 1 2 2v13a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h2a2 2 0 0 1 2-2Z" fill="#27ae60" opacity=".15"></path><path d="M9 3h6a2 2 0 0 1 2 2h2a2 2 0 0 1 2 2v13a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h2a2 2 0 0 1 2-2Zm0 0V2h6v1M7 10h10M7 14h10M7 18h7" fill="none" stroke="#27ae60" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /></symbol>
-            <symbol id="icon-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3" fill="#27ae60" opacity=".6"/><path d="M17 11a3 3 0 1 0-2.999-3A3 3 0 0 0 17 11Z" fill="#27ae60" opacity=".6"/><path d="M3 20c0-3.314 2.686-6 6-6s6 2.686 6 6M14 19c0-2.209 1.791-4 4-4s4 1.791 4 4" fill="none" stroke="#27ae60" stroke-width="2" stroke-linecap="round"/></symbol>
-            <symbol id="icon-building" viewBox="0 0 24 24"><path d="M4 21V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v16M2 21h20M9 21v-4h2v4M7 7h2M11 7h2M7 11h2M11 11h2M7 15h2M11 15h2" fill="none" stroke="#27ae60" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
-            <symbol id="icon-calculator" viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="2" ry="2" fill="#27ae60" opacity=".12"/><rect x="7" y="6" width="10" height="3" rx="1" ry="1" fill="#27ae60"/><path d="M8 12h2M12 12h2M16 12h0M8 15h2M12 15h2M8 18h2M12 18h2M16 15h0M16 18h0" stroke="#27ae60" stroke-width="2" stroke-linecap="round"/></symbol>
-            <symbol id="icon-robot" viewBox="0 0 24 24"><rect x="4" y="6" width="16" height="12" rx="2" ry="2" fill="#27ae60" opacity=".15"/><circle cx="9" cy="12" r="2" fill="#27ae60"/><circle cx="15" cy="12" r="2" fill="#27ae60"/><path d="M4 16h16M10 6V3M14 6V3M8 20h8" stroke="#27ae60" stroke-width="2" stroke-linecap="round"/></symbol>
-            <symbol id="icon-pin" viewBox="0 0 24 24"><path d="M12 22s-7-6.268-7-12a7 7 0 1 1 14 0c0 5.732-7 12-7 12Z" fill="#27ae60" opacity=".18"/><circle cx="12" cy="10" r="3" fill="#27ae60" /></symbol>
-            <symbol id="icon-phone" viewBox="0 0 24 24"><path d="M22 16.92v2a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4 1.08h2a2 2 0 0 1 2 1.72c.12.9.31 1.77.57 2.61a2 2 0 0 1-.45 2.11L7 9a16 16 0 0 0 8 8l1.48-1.12a2 2 0 0 1 2.11-.45c.84.26 1.71.45 2.61.57A2 2 0 0 1 22 16.92Z" fill="#27ae60"/></symbol>
-            <symbol id="icon-mail" viewBox="0 0 24 24"><path d="M4 6h16a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2Z" fill="#27ae60" opacity=".12"/><path d="M22 8l-10 7L2 8" fill="none" stroke="#27ae60" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
-            <symbol id="icon-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="none" stroke="#27ae60" stroke-width="2"/><path d="M2 12h20M12 2c3 4 3 16 0 20M12 2c-3 4-3 16 0 20" fill="none" stroke="#27ae60" stroke-width="2"/></symbol>
+            <!-- Clipboard -->
+            <symbol id="icon-clipboard" viewBox="0 0 24 24">
+                <path d="M9 3h6a2 2 0 0 1 2 2h2a2 2 0 0 1 2 2v13a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h2a2 2 0 0 1 2-2Z" fill="#27ae60" opacity=".15"></path>
+                <path d="M9 3h6a2 2 0 0 1 2 2h2a2 2 0 0 1 2 2v13a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h2a2 2 0 0 1 2-2Zm0 0V2h6v1M7 10h10M7 14h10M7 18h7" fill="none" stroke="#27ae60" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </symbol>
+            <!-- Users -->
+            <symbol id="icon-users" viewBox="0 0 24 24">
+                <circle cx="9" cy="8" r="3" fill="#27ae60" opacity=".6"/>
+                <path d="M17 11a3 3 0 1 0-2.999-3A3 3 0 0 0 17 11Z" fill="#27ae60" opacity=".6"/>
+                <path d="M3 20c0-3.314 2.686-6 6-6s6 2.686 6 6M14 19c0-2.209 1.791-4 4-4s4 1.791 4 4" fill="none" stroke="#27ae60" stroke-width="2" stroke-linecap="round"/>
+            </symbol>
+            <!-- Building -->
+            <symbol id="icon-building" viewBox="0 0 24 24">
+                <path d="M4 21V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v16M2 21h20M9 21v-4h2v4M7 7h2M11 7h2M7 11h2M11 11h2M7 15h2M11 15h2" fill="none" stroke="#27ae60" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </symbol>
+            <!-- Calculator -->
+            <symbol id="icon-calculator" viewBox="0 0 24 24">
+                <rect x="4" y="3" width="16" height="18" rx="2" ry="2" fill="#27ae60" opacity=".12"/>
+                <rect x="7" y="6" width="10" height="3" rx="1" ry="1" fill="#27ae60"/>
+                <path d="M8 12h2M12 12h2M16 12h0M8 15h2M12 15h2M8 18h2M12 18h2M16 15h0M16 18h0" stroke="#27ae60" stroke-width="2" stroke-linecap="round"/>
+            </symbol>
+            <!-- Robot -->
+            <symbol id="icon-robot" viewBox="0 0 24 24">
+                <rect x="4" y="6" width="16" height="12" rx="2" ry="2" fill="#27ae60" opacity=".15"/>
+                <circle cx="9" cy="12" r="2" fill="#27ae60"/>
+                <circle cx="15" cy="12" r="2" fill="#27ae60"/>
+                <path d="M4 16h16M10 6V3M14 6V3M8 20h8" stroke="#27ae60" stroke-width="2" stroke-linecap="round"/>
+            </symbol>
+            <!-- Location pin -->
+            <symbol id="icon-pin" viewBox="0 0 24 24">
+                <path d="M12 22s-7-6.268-7-12a7 7 0 1 1 14 0c0 5.732-7 12-7 12Z" fill="#27ae60" opacity=".18"/>
+                <circle cx="12" cy="10" r="3" fill="#27ae60" />
+            </symbol>
+            <!-- Phone -->
+            <symbol id="icon-phone" viewBox="0 0 24 24">
+                <path d="M22 16.92v2a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4 1.08h2a2 2 0 0 1 2 1.72c.12.9.31 1.77.57 2.61a2 2 0 0 1-.45 2.11L7 9a16 16 0 0 0 8 8l1.48-1.12a2 2 0 0 1 2.11-.45c.84.26 1.71.45 2.61.57A2 2 0 0 1 22 16.92Z" fill="#27ae60"/>
+            </symbol>
+            <!-- Mail -->
+            <symbol id="icon-mail" viewBox="0 0 24 24">
+                <path d="M4 6h16a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2Z" fill="#27ae60" opacity=".12"/>
+                <path d="M22 8l-10 7L2 8" fill="none" stroke="#27ae60" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </symbol>
+            <!-- Globe -->
+            <symbol id="icon-globe" viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="10" fill="none" stroke="#27ae60" stroke-width="2"/>
+                <path d="M2 12h20M12 2c3 4 3 16 0 20M12 2c-3 4-3 16 0 20" fill="none" stroke="#27ae60" stroke-width="2"/>
+            </symbol>
         </defs>
     </svg>
 
     <div class="header">
+        <!-- Language switcher (top-right) -->
         <div class="topbar">
             <nav class="lang-switch" aria-label="Language selector">
                 <!-- Russian (RU) -> index.html -->
-                <a href="index.html" hreflang="ru" lang="ru" title="Russian (RU)"><span class="sr-only">Russian</span><svg viewBox="0 0 3 2" aria-hidden="true" role="img"><rect width="3" height="2" fill="#fff"/><rect width="3" height="0.6667" y="0.6667" fill="#0039A6"/><rect width="3" height="0.6667" y="1.3333" fill="#D52B1E"/></svg></a>
+                <a href="index.html" hreflang="ru" lang="ru" title="Русский (RU)">
+                    <span class="sr-only">Русский</span>
+                    <!-- Flag: Russia -->
+                    <svg viewBox="0 0 3 2" aria-hidden="true" role="img">
+                        <rect width="3" height="2" fill="#fff"/>
+                        <rect width="3" height="0.6667" y="0.6667" fill="#0039A6"/>
+                        <rect width="3" height="0.6667" y="1.3333" fill="#D52B1E"/>
+                    </svg>
+                </a>
                 <!-- English (US) -> eng.html -->
-                <a href="eng.html" hreflang="en" lang="en" title="English (US)"><span class="sr-only">English</span><svg viewBox="0 0 7410 3900" aria-hidden="true" role="img"><rect width="7410" height="3900" fill="#b22234"/><g fill="#fff"><path d="M0 300h7410v300H0zM0 900h7410v300H0zM0 1500h7410v300H0zM0 2100h7410v300H0zM0 2700h7410v300H0zM0 3300h7410v300H0z"/></g><rect width="2964" height="2100" fill="#3c3b6e"/><g fill="#fff"><g transform="scale(63)"><circle cx="16" cy="16" r="2"/><circle cx="24" cy="24" r="2"/><circle cx="32" cy="16" r="2"/><circle cx="40" cy="24" r="2"/><circle cx="48" cy="16" r="2"/><circle cx="56" cy="24" r="2"/><circle cx="16" cy="32" r="2"/><circle cx="24" cy="40" r="2"/><circle cx="32" cy="32" r="2"/><circle cx="40" cy="40" r="2"/><circle cx="48" cy="32" r="2"/><circle cx="56" cy="40" r="2"/></g></g></svg></a>
+                <a href="eng.html" hreflang="en" lang="en" title="English (US)">
+                    <span class="sr-only">English</span>
+                    <!-- Flag: United States -->
+                    <svg viewBox="0 0 7410 3900" aria-hidden="true" role="img">
+                        <rect width="7410" height="3900" fill="#b22234"/>
+                        <g fill="#fff">
+                            <path d="M0 300h7410v300H0zM0 900h7410v300H0zM0 1500h7410v300H0zM0 2100h7410v300H0zM0 2700h7410v300H0zM0 3300h7410v300H0z"/>
+                        </g>
+                        <rect width="2964" height="2100" fill="#3c3b6e"/>
+                        <!-- a simple star grid (stylized) -->
+                        <g fill="#fff">
+                            <g transform="scale(63)">
+                                <circle cx="16" cy="16" r="2"/>
+                                <circle cx="24" cy="24" r="2"/>
+                                <circle cx="32" cy="16" r="2"/>
+                                <circle cx="40" cy="24" r="2"/>
+                                <circle cx="48" cy="16" r="2"/>
+                                <circle cx="56" cy="24" r="2"/>
+                                <circle cx="16" cy="32" r="2"/>
+                                <circle cx="24" cy="40" r="2"/>
+                                <circle cx="32" cy="32" r="2"/>
+                                <circle cx="40" cy="40" r="2"/>
+                                <circle cx="48" cy="32" r="2"/>
+                                <circle cx="56" cy="40" r="2"/>
+                            </g>
+                        </g>
+                    </svg>
+                </a>
                 <!-- Uzbek (UZ) -> uzb.html -->
-                <a href="uzb.html" hreflang="uz" lang="uz" title="Oʻzbekcha (UZ)"><span class="sr-only">Oʻzbekcha</span><svg viewBox="0 0 5 3" aria-hidden="true" role="img"><rect width="5" height="3" fill="#1eb53a"/><rect width="5" height="2" fill="#fff"/><rect width="5" height="1.6" fill="#0099b5"/><rect width="5" height="0.1" y="1.6" fill="#ce1126"/><rect width="5" height="0.1" y="2" fill="#ce1126"/><circle cx="0.7" cy="0.5" r="0.28" fill="#fff"/><circle cx="0.8" cy="0.5" r="0.23" fill="#0099b5"/><g fill="#fff"><circle cx="1.2" cy="0.22" r="0.035"/><circle cx="1.35" cy="0.28" r="0.035"/><circle cx="1.2" cy="0.34" r="0.035"/><circle cx="1.05" cy="0.28" r="0.035"/></g></svg></a>
+                <a href="uzb.html" hreflang="uz" lang="uz" title="Oʻzbekcha (UZ)">
+                    <span class="sr-only">Oʻzbekcha</span>
+                    <!-- Flag: Uzbekistan -->
+                    <svg viewBox="0 0 5 3" aria-hidden="true" role="img">
+                        <rect width="5" height="3" fill="#1eb53a"/>
+                        <rect width="5" height="2" fill="#fff"/>
+                        <rect width="5" height="1.6" fill="#0099b5"/>
+                        <rect width="5" height="0.1" y="1.6" fill="#ce1126"/>
+                        <rect width="5" height="0.1" y="2" fill="#ce1126"/>
+                        <!-- crescent -->
+                        <circle cx="0.7" cy="0.5" r="0.28" fill="#fff"/>
+                        <circle cx="0.8" cy="0.5" r="0.23" fill="#0099b5"/>
+                        <!-- stars (stylized) -->
+                        <g fill="#fff">
+                            <circle cx="1.2" cy="0.22" r="0.035"/>
+                            <circle cx="1.35" cy="0.28" r="0.035"/>
+                            <circle cx="1.2" cy="0.34" r="0.035"/>
+                            <circle cx="1.05" cy="0.28" r="0.035"/>
+                        </g>
+                    </svg>
+                </a>
             </nav>
         </div>
         <div class="logo">IT PARK UZBEKISTAN</div>
@@ -88,34 +199,52 @@
     <div class="container">
         <div class="grid">
             <div class="card" onclick="openModal('ossModal')">
-                <div class="card-icon" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" role="img" aria-label="OSS Program"><use href="#icon-clipboard"></use></svg></div>
+                <div class="card-icon" aria-hidden="true">
+                    <svg class="icon" viewBox="0 0 24 24" role="img" aria-label="OSS Program"><use href="#icon-clipboard"></use></svg>
+                </div>
                 <div class="card-title">OSS Program</div>
-                <div class="card-description">End‑to‑end support for company registration and setup</div>
+                <div class="card-description">Business registration and support services</div>
             </div>
 
             <div class="card" onclick="openModal('residentModal')">
-                <div class="card-icon" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" role="img" aria-label="How to become a resident"><use href="#icon-users"></use></svg></div>
-                <div class="card-title">How to Become a Resident?</div>
-                <div class="card-description">See the step‑by‑step process to obtain IT Park resident status</div>
+                <div class="card-icon" aria-hidden="true">
+                    <svg class="icon" viewBox="0 0 24 24" role="img" aria-label="How to become a resident"><use href="#icon-users"></use></svg>
+                </div>
+                <div class="card-title">How to become a resident?</div>
+                <div class="card-description">Step-by-step process to obtain IT Park resident status</div>
             </div>
 
             <div class="card" onclick="openModal('virtualOfficeModal')">
-                <div class="card-icon" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" role="img" aria-label="Virtual Office"><use href="#icon-building"></use></svg></div>
+                <div class="card-icon" aria-hidden="true">
+                    <svg class="icon" viewBox="0 0 24 24" role="img" aria-label="Virtual Office"><use href="#icon-building"></use></svg>
+                </div>
                 <div class="card-title">Virtual Office</div>
-                <div class="card-description">Run your business without a physical office using our services</div>
+                <div class="card-description">Run your business without a physical office</div>
             </div>
 
-            <!-- Calculator opens an external iframe immediately, so no modal is needed -->
             <div class="card" onclick="showIframe('https://it-park.ish.uz/#calculate')">
-                <div class="card-icon" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" role="img" aria-label="Tax Calculator"><use href="#icon-calculator"></use></svg></div>
+                <div class="card-icon" aria-hidden="true">
+                    <svg class="icon" viewBox="0 0 24 24" role="img" aria-label="Tax Calculator"><use href="#icon-calculator"></use></svg>
+                </div>
                 <div class="card-title">Tax Calculator</div>
                 <div class="card-description">Compare tax burden with and without incentives</div>
             </div>
 
+            <!-- IT Visa Card (EN) -->
+            <div class="card" onclick="openModal('itVisaModal')">
+                <div class="card-icon" aria-hidden="true">
+                    <svg class="icon" viewBox="0 0 24 24" role="img" aria-label="IT Visa"><use href="#icon-globe"></use></svg>
+                </div>
+                <div class="card-title">IT Visa</div>
+                <div class="card-description">A visa for foreign IT specialists and their families: the right to live and work in Uzbekistan, plus benefits and support</div>
+            </div>
+
             <div class="card" onclick="openModal('aiModal')">
-                <div class="card-icon" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" role="img" aria-label="AI Consultant"><use href="#icon-robot"></use></svg></div>
+                <div class="card-icon" aria-hidden="true">
+                    <svg class="icon" viewBox="0 0 24 24" role="img" aria-label="AI Assistant"><use href="#icon-robot"></use></svg>
+                </div>
                 <div class="card-title">FAQ</div>
-                <div class="card-description">Frequently Asked Questions</div>
+                <div class="card-description">Get answers to the most frequently asked questions</div>
             </div>
         </div>
     </div>
@@ -124,33 +253,29 @@
     <div id="residentModal" class="modal">
         <div class="modal-content">
             <div class="modal-header">
-                <h2 class="modal-title">How to Become an IT Park Resident</h2>
+                <h2 class="modal-title">How to become an IT Park resident?</h2>
                 <span class="close" onclick="closeModal('residentModal')" aria-label="Close">&times;</span>
             </div>
             <div class="modal-body">
-                <p><strong>To obtain IT Park resident status, fill in the following steps when submitting your business plan:</strong></p>
+                <p><strong>To obtain IT Park resident status, you must fill out the information step by step when submitting your business plan:</strong></p>
                 <div class="steps">
-                    <div class="step"><div class="step-number">Step 1:</div> Company information</div>
-                    <div class="step"><div class="step-number">Step 2:</div> Areas of activity</div>
+                    <div class="step"><div class="step-number">Step 1:</div> Company details</div>
+                    <div class="step"><div class="step-number">Step 2:</div> Activity area of the company</div>
                     <div class="step"><div class="step-number">Step 3:</div> Organizational plan</div>
                     <div class="step"><div class="step-number">Step 4:</div> Financial plan</div>
-                    <div class="step"><div class="step-number">Step 5:</div> Procurement plan (if applicable)</div>
-                    <div class="step"><div class="step-number">Step 6:</div> Official website (if available)</div>
+                    <div class="step"><div class="step-number">Step 5:</div> Procurement plan (if any)</div>
+                    <div class="step"><div class="step-number">Step 6:</div> Official website (if any)</div>
                 </div>
                 <div class="qr-section">
-                    <h3>Submit an Application</h3>
-                    <p>Scan the QR code to start your application</p>
+                    <h3>Submit an application</h3>
+                    <p>Scan the QR code to go to the application form</p>
                     <div class="qr-code"><img src="resident-cabinet.gif" alt="resident cabinet"></div>
-                    <button class="btn" onclick="showIframe('https://my.it-park.uz/resident-cabinet')">Open Application Form</button>
+                    <button class="btn" onclick="showIframe('https://my.it-park.uz/resident-cabinet')">Open the application form</button>
                 </div>
                 <div class="qr-section">
                     <h3>Contact the Registration Department</h3>
-                    <p>Scan the QR code to get in touch</p>
-                    <div class="qr-code"><img src="mukhammadyusuf.gif" alt="registration contact"></div>
-                </div>
-                <div style="margin-top: 30px;">
-                    <h3>Frequently Asked Questions</h3>
-                    <button class="btn" onclick="showIframe('https://my.it-park.uz/faq')">Open FAQ</button>
+                    <p>Scan the QR code to contact our registration team</p>
+                    <div class="qr-code"><img src="mukhammadyusuf.gif" alt="registration contact QR"></div>
                 </div>
             </div>
         </div>
@@ -165,25 +290,50 @@
             </div>
             <div class="modal-body">
                 <div class="steps">
-                    <div class="step"><div class="step-number">Company registration</div>Full support throughout the registration process</div>
-                    <div class="step"><div class="step-number">Initial corporate documents</div>Charter, resolution, founders' agreement, appointment order for director (accountant)</div>
-                    <div class="step"><div class="step-number">Obtaining PINFL via power of attorney</div>Arranging all required identification documents</div>
-                    <div class="step"><div class="step-number">Opening a bank account</div>Assistance with bank selection and current account opening</div>
+                    <div class="step"><div class="step-number">Business registration</div>Full support throughout your company registration process</div>
+                    <div class="step"><div class="step-number">Preparation of initial documents</div>Charter, resolution, foundation agreement, order appointing the director (accountant)</div>
+                    <div class="step"><div class="step-number">Obtaining a PINFL via power of attorney</div>Preparation of all required identification documents</div>
+                    <div class="step"><div class="step-number">Opening a bank account</div>Support choosing a bank and opening a settlement account</div>
                 </div>
 
                 <div class="qr-section">
                     <h3>Apply for OSS</h3>
-                    <p>Scan the QR code to submit your request</p>
+                    <p>Scan the QR code to submit your application</p>
                     <div class="qr-code"><img src="oss.gif" alt="qr code"></div>
-                    <button class="btn" onclick="showIframe('https://my.it-park.uz/oss')">Submit Request</button>
+                    <button class="btn" onclick="showIframe('https://my.it-park.uz/oss')">Submit application</button>
+                </div>
+                <div class="qr-section">
+                    <h3>Contact a manager</h3>
+                    <p>Scan the QR code to contact a manager</p>
+                    <div class="qr-code"><img src="nizomiddin.gif" alt="manager contact QR"></div>
                 </div>
 
                 <div class="contact-info">
-                    <h3>Contact Information</h3>
-                    <div class="contact-item"><div class="contact-icon"><svg class="icon-sm" viewBox="0 0 24 24" role="img" aria-label="Address"><use href="#icon-pin"></use></svg></div><div>Uzbekistan, Tashkent, Tepamasjid Street, 4, 100164</div></div>
-                    <div class="contact-item"><div class="contact-icon"><svg class="icon-sm" viewBox="0 0 24 24" role="img" aria-label="Phone"><use href="#icon-phone"></use></svg></div><div>1345</div></div>
-                    <div class="contact-item"><div class="contact-icon"><svg class="icon-sm" viewBox="0 0 24 24" role="img" aria-label="Email"><use href="#icon-mail"></use></svg></div><div>info@it-park.uz</div></div>
-                    <div class="contact-item"><div class="contact-icon"><svg class="icon-sm" viewBox="0 0 24 24" role="img" aria-label="Website"><use href="#icon-globe"></use></svg></div><div>www.it-park.uz</div></div>
+                    <h3>Contact information</h3>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <svg class="icon-sm" viewBox="0 0 24 24" role="img" aria-label="Address"><use href="#icon-pin"></use></svg>
+                        </div>
+                        <div>Uzbekistan, Tashkent, Tepamasjid Street, 4, 100164</div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <svg class="icon-sm" viewBox="0 0 24 24" role="img" aria-label="Phone"><use href="#icon-phone"></use></svg>
+                        </div>
+                        <div>+99871 209 11 99</div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <svg class="icon-sm" viewBox="0 0 24 24" role="img" aria-label="Email"><use href="#icon-mail"></use></svg>
+                        </div>
+                        <div>info@it-park.uz</div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <svg class="icon-sm" viewBox="0 0 24 24" role="img" aria-label="Website"><use href="#icon-globe"></use></svg>
+                        </div>
+                        <div>outsource.gov.uz/</div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -198,39 +348,64 @@
             </div>
             <div class="modal-body">
                 <h3>Virtual Office</h3>
-                <p>The Virtual Office lets you operate successfully without the following:</p>
+                <p>The virtual office lets you operate successfully without:</p>
                 <div class="steps">
-                    <div class="step">finding a suitable office</div>
-                    <div class="step">paying high rent</div>
+                    <div class="step">searching for a suitable office</div>
+                    <div class="step">paying expensive rent</div>
                     <div class="step">maintaining office premises</div>
-                    <div class="step">utility payments</div>
+                    <div class="step">utility bills</div>
                     <div class="step">hiring an office manager and security</div>
                 </div>
+                <div class="qr-section">
+                    <h3>Contact a manager</h3>
+                    <p>Scan the QR code to contact a manager</p>
+                    <div class="qr-code"><img src="jamshid.gif" alt="manager contact QR"></div>
+                </div>
                 <div class="contact-info">
-                    <h3>Contact Information</h3>
-                    <div class="contact-item"><div class="contact-icon"><svg class="icon-sm" viewBox="0 0 24 24" aria-label="Address"><use href="#icon-pin"/></svg></div><div>Uzbekistan, Tashkent, Tepamasjid Street, 4, 100164</div></div>
-                    <div class="contact-item"><div class="contact-icon"><svg class="icon-sm" viewBox="0 0 24 24" aria-label="Phone"><use href="#icon-phone"/></svg></div><div>1345</div></div>
-                    <div class="contact-item"><div class="contact-icon"><svg class="icon-sm" viewBox="0 0 24 24" aria-label="Email"><use href="#icon-mail"/></svg></div><div>info@it-park.uz</div></div>
-                    <div class="contact-item"><div class="contact-icon"><svg class="icon-sm" viewBox="0 0 24 24" aria-label="Website"><use href="#icon-globe"/></svg></div><div>www.it-park.uz</div></div>
+                    <h3>Contact information</h3>
+                    <div class="contact-item">
+                        <div class="contact-icon"><svg class="icon-sm" viewBox="0 0 24 24" aria-label="Address"><use href="#icon-pin"/></svg></div>
+                        <div>Uzbekistan, Tashkent, Tepamasjid Street, 4, 100164</div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon"><svg class="icon-sm" viewBox="0 0 24 24" aria-label="Phone"><use href="#icon-phone"/></svg></div>
+                        <div>+99871 209 11 99</div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon"><svg class="icon-sm" viewBox="0 0 24 24" aria-label="Email"><use href="#icon-mail"/></svg></div>
+                        <div>info@it-park.uz</div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon"><svg class="icon-sm" viewBox="0 0 24 24" aria-label="Website"><use href="#icon-globe"/></svg></div>
+                        <div>outsource.gov.uz/</div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Calculator Modal (REMOVED FROM DOM: commented out since calculator opens directly in iframe) -->
-    <!--
-    <div id="calculatorModal" class="modal">
+    <!-- IT Visa Modal (EN) -->
+    <div id="itVisaModal" class="modal">
         <div class="modal-content">
             <div class="modal-header">
-                <h2 class="modal-title">Tax Calculator</h2>
-                <span class="close" onclick="closeModal('calculatorModal')" aria-label="Close">&times;</span>
+                <h2 class="modal-title">IT Visa</h2>
+                <span class="close" onclick="closeModal('itVisaModal')" aria-label="Close">&times;</span>
             </div>
             <div class="modal-body">
-                ... (the calculator markup used to be here) ...
+                <p><strong>IT VISA is a visa for foreign IT specialists and their families. It grants the right to live and work in Uzbekistan, as well as access to benefits and support programs for IT professionals.</strong></p>
+                <div class="steps">
+                    <div class="step"><div class="step-number">Who can apply</div>Foreign IT specialists, founders and key employees of IT companies</div>
+                    <div class="step"><div class="step-number">What it provides</div>The right to reside and work, and access to incentives and support programs</div>
+                    <div class="step"><div class="step-number">How to apply</div>Prepare the documents and submit your application online</div>
+                </div>
+                <div class="qr-section">
+                    <h3>Contact</h3>
+                    <p>Scan the QR or use the button to message on Telegram</p>
+                    <div class="qr-code"><img src="it-visa.gif" alt="Telegram QR: @millenial555"></div>
+                </div>
             </div>
         </div>
     </div>
-    -->
 
     <!-- AI Modal -->
     <div id="aiModal" class="modal">
@@ -241,13 +416,15 @@
             </div>
             <div class="modal-body">
                 <div style="text-align:center;">
-                    <div class="card-icon" aria-hidden="true" style="margin-bottom:10px;"><svg class="icon" viewBox="0 0 24 24" role="img" aria-label="AI Consultant"><use href="#icon-robot"></use></svg></div>
+                    <div class="card-icon" aria-hidden="true" style="margin-bottom:10px;">
+                        <svg class="icon" viewBox="0 0 24 24" role="img" aria-label="AI Assistant"><use href="#icon-robot"></use></svg>
+                    </div>
                     <h3>FAQ</h3>
-                    <button class="btn" onclick="showIframe('https://my.it-park.uz/faq/')">Frequently Asked Questions</button>
-                    <p style="margin:20px 0;">Get personalized assistance and answers from our AI assistant</p>
+                    <button class="btn" onclick="showIframe('https://it-park.ish.uz/faq')">Frequently Asked Questions</button>
+                    <p style="margin:20px 0;">Get personal consultations and answers from our AI assistant</p>
                 </div>
                 <div class="qr-section">
-                    <h3>Open Chat with AI Consultant</h3>
+                    <h3>Open chat with AI assistant</h3>
                     <p>Scan the QR code to submit a request</p>
                     <div class="qr-code"><img src="ai-assistant.gif" alt="qr code"></div>
                 </div>
@@ -276,7 +453,83 @@
             setTimeout(()=>{ if(url.includes('resident-cabinet')) document.getElementById('iframeTitle').textContent='Resident Cabinet';
                 else if(url.includes('faq')) document.getElementById('iframeTitle').textContent='Frequently Asked Questions';
                 else if(url.includes('/oss')) document.getElementById('iframeTitle').textContent='OSS Program';
-                else if(url.includes('ai.it-park.uz')) document.getElementById('iframeTitle').textContent='AI Consultant'; },1000);
+                else if(url.includes('ai.it-park.uz')) document.getElementById('iframeTitle').textContent='AI Assistant'; },1000);
+        }
+        function calculateTaxes(){
+            const rev = +(document.getElementById('rev')?.value || 0);
+            const costs = +(document.getElementById('costs')?.value || 0);
+            const payroll = +(document.getElementById('payroll')?.value || 0);
+            const propertyBase = +(document.getElementById('propertyBase')?.value || 0);
+            const importIT = +(document.getElementById('importIT')?.value || 0);
+            const customs = +(document.getElementById('customs')?.value || 0);
+            const under1b = !!document.getElementById('turnoverUnder1b')?.checked;
+            const includeVAT = !!document.getElementById('includeVAT')?.checked;
+            const includePIT = !!document.getElementById('includePIT')?.checked;
+            const propertyRatePct = parseFloat(document.getElementById('propertyRate')?.value || '1.5');
+
+            const fmt = n => new Intl.NumberFormat('en-US').format(Math.max(0, Math.round(n)) ) + ' UZS';
+            const pct = v => (v*100).toFixed(1)+'%';
+
+            const RATES = {
+                resident: { pit: 0.075, profit: 0, vat: 0, social: 0, turnover_under_1b: 0, vat_import_it: 0, property: 0 },
+                nonresident: { pit: 0.12, profit: 0.15, vat: 0.12, social: 0.12, turnover_under_1b: 0.04, vat_import_it: 0.12, property: (propertyRatePct||1.5)/100 }
+            };
+
+            function compute(type){
+                const r = RATES[type];
+                const social = payroll * r.social;
+                const baseProfit = rev - costs - payroll - social; // before corporate income tax
+                const profitTax = Math.max(0, baseProfit) * r.profit;
+                const turnoverTax = under1b ? rev * r.turnover_under_1b : 0;
+                const propertyTax = propertyBase * r.property;
+                const vatSales = rev * r.vat; // indirect
+                const pit = payroll * r.pit; // withheld from payroll
+                const vatImport = importIT * r.vat_import_it; // for non-residents
+                const customsPay = type==='nonresident' ? customs : 0; // “NO” for residents
+
+                let taxesTotal = social + profitTax + turnoverTax + propertyTax + vatImport + customsPay;
+                if(includeVAT) taxesTotal += vatSales;
+                if(includePIT) taxesTotal += pit;
+
+                const netProfit = rev - costs - payroll - social - profitTax - turnoverTax - propertyTax - vatImport - customsPay;
+                return {social, baseProfit, profitTax, turnoverTax, propertyTax, vatSales, pit, vatImport, customsPay, taxesTotal, netProfit};
+            }
+
+            const a = compute('resident');
+            const b = compute('nonresident');
+
+            function blockHTML(label, d, r){
+                return `
+                    <div class="result-title" style="margin-bottom:8px;">${label}</div>
+                    <div style="display:grid;grid-template-columns:1fr auto;gap:8px;line-height:1.5;">
+                        <div>Revenue</div><div>${fmt(rev)}</div>
+                        <div>COGS and other costs</div><div>${fmt(costs)}</div>
+                        <div>Payroll</div><div>${fmt(payroll)}</div>
+                        <div>Social tax (${pct(r.social)})</div><div>${fmt(d.social)}</div>
+                        <div>Profit base before tax</div><div>${fmt(d.baseProfit)}</div>
+                        <div>Corporate income tax (${pct(r.profit)})</div><div>${fmt(d.profitTax)}</div>
+                        ${document.getElementById('turnoverUnder1b')?.checked ? `<div>Turnover tax (${pct(r.turnover_under_1b)})</div><div>${fmt(d.turnoverTax)}</div>`:``}
+                        <div>Property tax ${r.property?`(${pct(r.property)})`:''}</div><div>${fmt(d.propertyTax)}</div>
+                        <div>VAT on IT services import ${r.vat_import_it?`(${pct(r.vat_import_it)})`:''}</div><div>${fmt(d.vatImport)}</div>
+                        ${d.customsPay?`<div>Customs duties</div><div>${fmt(d.customsPay)}</div>`:''}
+                        <div style="grid-column:1/-1;height:1px;background:#e9ecef;margin:6px 0;"></div>
+                        <div>VAT on sales ${r.vat?`(${pct(r.vat)})`:''} ${includeVAT?'' : '<span style="color:#7f8c8d;">(not included in total)</span>'}</div><div>${fmt(d.vatSales)}</div>
+                        <div>Personal income tax from payroll ${r.pit?`(${pct(r.pit)})`:''} ${includePIT?'' : '<span style=\"color:#7f8c8d;\">(not included in total)</span>'}</div><div>${fmt(d.pit)}</div>
+                        <div style="grid-column:1/-1;height:1px;background:#e9ecef;margin:6px 0;"></div>
+                        <div style="font-weight:600;">Total taxes</div><div style="font-weight:700;color:#27ae60;">${fmt(d.taxesTotal)}</div>
+                        <div style="font-weight:600;">Net profit</div><div style="font-weight:700;color:#27ae60;">${fmt(d.netProfit)}</div>
+                    </div>`;
+            }
+
+            const targetA = document.getElementById('resResident');
+            const targetB = document.getElementById('resNonresident');
+            if(!rev && !costs && !payroll && !propertyBase && !importIT && !customs){
+                if(targetA) targetA.textContent = 'Enter the data above.';
+                if(targetB) targetB.textContent = 'Enter the data above.';
+                return;
+            }
+            if(targetA) targetA.innerHTML = blockHTML('IT Park residents', a, RATES.resident);
+            if(targetB) targetB.innerHTML = blockHTML('Non-residents', b, RATES.nonresident);
         }
         window.onclick=function(e){ const ms=document.getElementsByClassName('modal'); for(let m of ms){ if(e.target===m){ closeModal(m.id);} } }
         document.addEventListener('touchstart', function(){}, true);
