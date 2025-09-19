@@ -11,11 +11,19 @@
             background: linear-gradient(135deg, #f8fffe 0%, #e8f5f3 100%);
             min-height: 100vh; color: #2c3e50; touch-action: manipulation;
         }
-        .header { text-align: center; padding: 40px 20px; background: white;
+        .header { position: relative; text-align: center; padding: 40px 20px; background: white;
             box-shadow: 0 4px 20px rgba(0,0,0,0.1); margin-bottom: 40px; }
         .logo { font-size: 3rem; font-weight: 700; color: #27ae60; margin-bottom: 10px;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.1); }
         .subtitle { font-size: 1.5rem; color: #7f8c8d; font-weight: 300; }
+
+        /* Language switcher */
+        .topbar { position: absolute; right: 16px; top: 16px; display: flex; gap: 12px; align-items: center; }
+        .lang-switch a { display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 24px; border-radius: 4px; overflow: hidden; border: 1px solid #e2e8f0; background: #fff; transition: transform .15s ease, box-shadow .15s ease; }
+        .lang-switch a:hover { transform: translateY(-1px); box-shadow: 0 6px 16px rgba(0,0,0,0.12); }
+        .lang-switch svg { display: block; width: 100%; height: 100%; }
+        .lang-switch .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+
         .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; padding: 20px 0; }
         .card { background: white; border-radius: 20px; padding: 40px 30px; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.1);
@@ -47,7 +55,7 @@
         .calc-input { width: 100%; padding: 15px; border: 2px solid #e9ecef; border-radius: 10px; font-size: 1.1rem; margin: 10px 0; transition: border-color 0.3s ease; }
         .calc-input:focus { outline: none; border-color: #27ae60; }
         .calc-result { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 20px 0; }
-        .result-card { background: white; padding: 20px; border-radius: 10px; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        .result-card { background: white; padding: 20px; border-radius: 10px; text-align: left; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
         .result-title { font-weight: 600; color: #2c3e50; margin-bottom: 10px; }
         .result-value { font-size: 1.5rem; font-weight: bold; color: #27ae60; }
         .iframe-container { width: 100%; height: 500px; border: none; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
@@ -59,6 +67,8 @@
             .modal-content { width: 95%; margin: 5% auto; }
             .calc-result { grid-template-columns: 1fr; }
             .icon { width: 56px; height: 56px; }
+            .topbar { right: 12px; top: 12px; }
+            .lang-switch a { width: 32px; height: 22px; }
         }
     </style>
 </head>
@@ -117,6 +127,72 @@
     </svg>
 
     <div class="header">
+        <!-- Language switcher (top-right) -->
+        <div class="topbar">
+            <nav class="lang-switch" aria-label="Language selector">
+                <!-- Russian (RU) -> index.html -->
+                <a href="index.html" hreflang="ru" lang="ru" title="Русский (RU)">
+                    <span class="sr-only">Русский</span>
+                    <!-- Flag: Russia -->
+                    <svg viewBox="0 0 3 2" aria-hidden="true" role="img">
+                        <rect width="3" height="2" fill="#fff"/>
+                        <rect width="3" height="0.6667" y="0.6667" fill="#0039A6"/>
+                        <rect width="3" height="0.6667" y="1.3333" fill="#D52B1E"/>
+                    </svg>
+                </a>
+                <!-- English (US) -> eng.html -->
+                <a href="eng.html" hreflang="en" lang="en" title="English (US)">
+                    <span class="sr-only">English</span>
+                    <!-- Flag: United States -->
+                    <svg viewBox="0 0 7410 3900" aria-hidden="true" role="img">
+                        <rect width="7410" height="3900" fill="#b22234"/>
+                        <g fill="#fff">
+                            <path d="M0 300h7410v300H0zM0 900h7410v300H0zM0 1500h7410v300H0zM0 2100h7410v300H0zM0 2700h7410v300H0zM0 3300h7410v300H0z"/>
+                        </g>
+                        <rect width="2964" height="2100" fill="#3c3b6e"/>
+                        <!-- a simple star grid (not exact 50 for brevity-friendly rendering) -->
+                        <g fill="#fff">
+                            <g transform="scale(63)">
+                                <circle cx="16" cy="16" r="2"/>
+                                <circle cx="24" cy="24" r="2"/>
+                                <circle cx="32" cy="16" r="2"/>
+                                <circle cx="40" cy="24" r="2"/>
+                                <circle cx="48" cy="16" r="2"/>
+                                <circle cx="56" cy="24" r="2"/>
+                                <circle cx="16" cy="32" r="2"/>
+                                <circle cx="24" cy="40" r="2"/>
+                                <circle cx="32" cy="32" r="2"/>
+                                <circle cx="40" cy="40" r="2"/>
+                                <circle cx="48" cy="32" r="2"/>
+                                <circle cx="56" cy="40" r="2"/>
+                            </g>
+                        </g>
+                    </svg>
+                </a>
+                <!-- Uzbek (UZ) -> uzb.html -->
+                <a href="uzb.html" hreflang="uz" lang="uz" title="Oʻzbekcha (UZ)">
+                    <span class="sr-only">Oʻzbekcha</span>
+                    <!-- Flag: Uzbekistan -->
+                    <svg viewBox="0 0 5 3" aria-hidden="true" role="img">
+                        <rect width="5" height="3" fill="#1eb53a"/>
+                        <rect width="5" height="2" fill="#fff"/>
+                        <rect width="5" height="1.6" fill="#0099b5"/>
+                        <rect width="5" height="0.1" y="1.6" fill="#ce1126"/>
+                        <rect width="5" height="0.1" y="2" fill="#ce1126"/>
+                        <!-- crescent -->
+                        <circle cx="0.7" cy="0.5" r="0.28" fill="#fff"/>
+                        <circle cx="0.8" cy="0.5" r="0.23" fill="#0099b5"/>
+                        <!-- a few stars (stylized) -->
+                        <g fill="#fff">
+                            <circle cx="1.2" cy="0.22" r="0.035"/>
+                            <circle cx="1.35" cy="0.28" r="0.035"/>
+                            <circle cx="1.2" cy="0.34" r="0.035"/>
+                            <circle cx="1.05" cy="0.28" r="0.035"/>
+                        </g>
+                    </svg>
+                </a>
+            </nav>
+        </div>
         <div class="logo">IT PARK UZBEKISTAN</div>
     </div>
 
@@ -352,11 +428,11 @@
                     </div>
 
                     <div class="calc-result" style="margin-top:20px;">
-                        <div class="result-card" id="residentBlock" style="text-align:left;">
+                        <div class="result-card" id="residentBlock">
                             <div class="result-title" style="font-size:1.1rem;">Резиденты IT Park</div>
                             <div id="resResident">Введите данные выше.</div>
                         </div>
-                        <div class="result-card" id="nonResidentBlock" style="text-align:left;">
+                        <div class="result-card" id="nonResidentBlock">
                             <div class="result-title" style="font-size:1.1rem;">Не резиденты</div>
                             <div id="resNonresident">Введите данные выше.</div>
                         </div>
@@ -477,7 +553,7 @@
                         ${d.customsPay?`<div>Таможенные платежи</div><div>${fmt(d.customsPay)}</div>`:''}
                         <div style="grid-column:1/-1;height:1px;background:#e9ecef;margin:6px 0;"></div>
                         <div>НДС с продаж ${r.vat?`(${pct(r.vat)})`:''} ${includeVAT?'' : '<span style="color:#7f8c8d;">(не включен в итог)</span>'}</div><div>${fmt(d.vatSales)}</div>
-                        <div>НДФЛ из ФОТ ${r.pit?`(${pct(r.pit)})`:''} ${includePIT?'' : '<span style=\"color:#7f8c8d;\">(не включен в итог)</span>'}</div><div>${fmt(d.pit)}</div>
+                        <div>НДФЛ из ФОТ ${r.pit?`(${pct(r.pit)})`:''} ${includePIT?'' : '<span style="color:#7f8c8d;">(не включен в итог)</span>'}</div><div>${fmt(d.pit)}</div>
                         <div style="grid-column:1/-1;height:1px;background:#e9ecef;margin:6px 0;"></div>
                         <div style="font-weight:600;">Итого налогов</div><div style="font-weight:700;color:#27ae60;">${fmt(d.taxesTotal)}</div>
                         <div style="font-weight:600;">Чистая прибыль</div><div style="font-weight:700;color:#27ae60;">${fmt(d.netProfit)}</div>
