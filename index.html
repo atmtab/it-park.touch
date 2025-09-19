@@ -276,10 +276,6 @@
                     <p>Отсканируйте QR-код для связи с отделом регистрации</p>
                     <div class="qr-code"><img src="mukhammadyusuf.gif" alt="resident cabinet"></div>
                 </div>
-                <div style="margin-top: 30px;">
-                    <h3>Часто задаваемые вопросы</h3>
-                    <button class="btn" onclick="showIframe('https://my.it-park.uz/faq')">Открыть FAQ</button>
-                </div>
             </div>
         </div>
     </div>
@@ -304,6 +300,11 @@
                     <p>Отсканируйте QR-код для подачи заявки</p>
                     <div class="qr-code"><img src="oss.gif" alt="qr code"></div>
                     <button class="btn" onclick="showIframe('https://my.it-park.uz/oss')">Подать заявку</button>
+                </div>
+                <div class="qr-section">
+                    <h3>Связаться с менеджером/h3>
+                    <p>Отсканируйте QR-код для связи с менеджером</p>
+                    <div class="qr-code"><img src="nizomiddin.gif" alt="resident cabinet"></div>
                 </div>
 
                 <div class="contact-info">
@@ -354,6 +355,11 @@
                     <div class="step">оплата коммунальных услуг</div>
                     <div class="step">найм офис-менеджера и охраны</div>
                 </div>
+                <div class="qr-section">
+                    <h3>Связаться с менеджером</h3>
+                    <p>Отсканируйте QR-код для связи с менеджером</p>
+                    <div class="qr-code"><img src="jamshid.gif" alt="resident cabinet"></div>
+                </div>
                 <div class="contact-info">
                     <h3>Контактная информация</h3>
                     <div class="contact-item">
@@ -377,82 +383,6 @@
         </div>
     </div>
 
-    <!-- Calculator Modal -->
-    <div id="calculatorModal" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h2 class="modal-title">Калькулятор налогов</h2>
-                <span class="close" onclick="closeModal('calculatorModal')" aria-label="Закрыть">&times;</span>
-            </div>
-            <div class="modal-body">
-                <div class="calculator">
-                    <h3 style="margin-bottom:10px;">Сравнение налоговой нагрузки (по таблице льгот)</h3>
-                    <p style="color:#7f8c8d;">Модель упрощена: НДС по продажам и НДФЛ считаются отдельно и по умолчанию не уменьшают чистую прибыль компании. Их можно включить в «Итого налогов» галочками ниже.</p>
-
-                    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:16px 0;">
-                        <div>
-                            <label>Годовой оборот (доход):</label>
-                            <input type="number" id="rev" class="calc-input" placeholder="Напр. 2 000 000 000" oninput="calculateTaxes()" />
-                        </div>
-                        <div>
-                            <label>Себестоимость и прочие расходы (без ФОТ):</label>
-                            <input type="number" id="costs" class="calc-input" placeholder="Напр. 900 000 000" oninput="calculateTaxes()" />
-                        </div>
-                        <div>
-                            <label>Фонд оплаты труда (ФОТ):</label>
-                            <input type="number" id="payroll" class="calc-input" placeholder="Напр. 600 000 000" oninput="calculateTaxes()" />
-                        </div>
-                        <div>
-                            <label>Среднегодовая стоимость имущества (для налога на имущество не‑резидентов 1.5–2%):</label>
-                            <input type="number" id="propertyBase" class="calc-input" placeholder="Напр. 200 000 000" oninput="calculateTaxes()" />
-                        </div>
-                        <div>
-                            <label>Объем импортируемых IT‑услуг (для НДС на импорт у не‑резидентов 12%):</label>
-                            <input type="number" id="importIT" class="calc-input" placeholder="Напр. 300 000 000" oninput="calculateTaxes()" />
-                        </div>
-                        <div>
-                            <label>Таможенные платежи при импорте товаров (сумма):</label>
-                            <input type="number" id="customs" class="calc-input" placeholder="Если применимо для не‑резидентов" oninput="calculateTaxes()" />
-                        </div>
-                    </div>
-
-                    <div style="display:flex;flex-wrap:wrap;gap:16px;align-items:center;margin:6px 0 10px;">
-                        <label style="display:flex;gap:8px;align-items:center;">
-                            <input type="checkbox" id="turnoverUnder1b" onchange="calculateTaxes()" />
-                            Оборот < 1 млрд (налог с оборота у не‑резидентов 4%)
-                        </label>
-                        <label style="display:flex;gap:8px;align-items:center;">
-                            <input type="checkbox" id="includeVAT" onchange="calculateTaxes()" />
-                            Включать НДС с продаж (12% у не‑резидентов) в «Итого налогов»
-                        </label>
-                        <label style="display:flex;gap:8px;align-items:center;">
-                            <input type="checkbox" id="includePIT" onchange="calculateTaxes()" />
-                            Включать НДФЛ из ФОТ (7.5% резиденты, 12% не‑резиденты) в «Итого налогов»
-                        </label>
-                        <div style="display:flex;gap:8px;align-items:center;">
-                            Ставка налога на имущество (не‑резиденты):
-                            <input type="number" id="propertyRate" class="calc-input" style="width:120px;" value="1.5" min="1.5" max="2" step="0.1" oninput="calculateTaxes()" />%
-                        </div>
-                    </div>
-
-                    <div class="calc-result" style="margin-top:20px;">
-                        <div class="result-card" id="residentBlock">
-                            <div class="result-title" style="font-size:1.1rem;">Резиденты IT Park</div>
-                            <div id="resResident">Введите данные выше.</div>
-                        </div>
-                        <div class="result-card" id="nonResidentBlock">
-                            <div class="result-title" style="font-size:1.1rem;">Не резиденты</div>
-                            <div id="resNonresident">Введите данные выше.</div>
-                        </div>
-                    </div>
-
-                    <div style="margin-top:12px;color:#7f8c8d;font-size:.9rem;line-height:1.4;">
-                        Примечание: НДФЛ удерживается из зарплаты сотрудников, а НДС — косвенный налог. По умолчанию они не уменьшают «Чистую прибыль», но могут быть включены в «Итого налогов» переключателями.
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
     <!-- IT Visa Modal (RU) -->
     <div id="itVisaModal" class="modal">
     <div class="modal-content">
@@ -471,8 +401,7 @@
             <h3>Контакт для связи</h3>
             <p>Сканируйте QR или перейдите по кнопке, чтобы написать в Telegram</p>
             <!-- Подложи свой QR PNG, если есть -->
-            <div class="qr-code"><img src="it-visa-telegram-qr.png" alt="Telegram QR: @millenial555"></div>
-            <a class="btn" href="https://t.me/millenial555" target="_blank" rel="noopener">Открыть Telegram</a>
+            <div class="qr-code"><img src="it-visa.gif" alt="Telegram QR: @millenial555"></div>
         </div>
         </div>
     </div>
