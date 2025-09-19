@@ -229,6 +229,14 @@
                 <div class="card-title">Калькулятор налогов</div>
                 <div class="card-description">Сравните налоговую нагрузку с льготами и без них</div>
             </div>
+            <!-- IT Visa Card (RU) -->
+            <div class="card" onclick="openModal('itVisaModal')">
+            <div class="card-icon" aria-hidden="true">
+                <svg class="icon" viewBox="0 0 24 24" role="img" aria-label="IT Visa"><use href="#icon-globe"></use></svg>
+            </div>
+            <div class="card-title">IT Visa</div>
+            <div class="card-description">Виза для иностранных IT‑специалистов и их семей: право жить и работать в Узбекистане, льготы и поддержка</div>
+            </div>
 
             <div class="card" onclick="openModal('aiModal')">
                 <div class="card-icon" aria-hidden="true">
@@ -444,6 +452,30 @@
                 </div>
             </div>
         </div>
+    </div>
+    <!-- IT Visa Modal (RU) -->
+    <div id="itVisaModal" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+        <h2 class="modal-title">IT Visa</h2>
+        <span class="close" onclick="closeModal('itVisaModal')" aria-label="Закрыть">&times;</span>
+        </div>
+        <div class="modal-body">
+        <p><strong>IT VISA — виза для иностранных IT‑специалистов и их семей, даёт право жить и работать в Узбекистане, а также пользоваться льготами и поддержкой для IT‑специалистов.</strong></p>
+        <div class="steps">
+            <div class="step"><div class="step-number">Кто может подать</div>Иностранные IT‑специалисты, основатели и ключевые сотрудники IT‑компаний</div>
+            <div class="step"><div class="step-number">Что даёт</div>Право проживания и работы, доступ к льготам и программам поддержки</div>
+            <div class="step"><div class="step-number">Как подать</div>Подготовьте документы и отправьте заявку онлайн</div>
+        </div>
+        <div class="qr-section">
+            <h3>Контакт для связи</h3>
+            <p>Сканируйте QR или перейдите по кнопке, чтобы написать в Telegram</p>
+            <!-- Подложи свой QR PNG, если есть -->
+            <div class="qr-code"><img src="it-visa-telegram-qr.png" alt="Telegram QR: @millenial555"></div>
+            <a class="btn" href="https://t.me/millenial555" target="_blank" rel="noopener">Открыть Telegram</a>
+        </div>
+        </div>
+    </div>
     </div>
 
     <!-- AI Modal -->
