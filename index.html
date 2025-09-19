@@ -298,21 +298,68 @@
             </div>
             <div class="modal-body">
                 <div class="calculator">
-                    <h3>Сравнение налоговой нагрузки</h3>
-                    <p>Введите ваш годовой доход для расчета:</p>
-                    <input type="number" id="income" class="calc-input" placeholder="Введите годовой доход (сум)" oninput="calculateTaxes()" />
-                    <div class="calc-result">
-                        <div class="result-card">
-                            <div class="result-title">Без льгот (≈12%)</div>
-                            <div class="result-value" id="withoutBenefits">0 сум</div>
+                    <h3 style="margin-bottom:10px;">Сравнение налоговой нагрузки (по таблице льгот)</h3>
+                    <p style="color:#7f8c8d;">Модель упрощена: НДС по продажам и НДФЛ считаются отдельно и по умолчанию не уменьшают чистую прибыль компании. Их можно включить в «Итого налогов» галочками ниже.</p>
+
+                    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:16px 0;">
+                        <div>
+                            <label>Годовой оборот (доход):</label>
+                            <input type="number" id="rev" class="calc-input" placeholder="Напр. 2 000 000 000" oninput="calculateTaxes()" />
                         </div>
-                        <div class="result-card">
-                            <div class="result-title">С льготами резидента</div>
-                            <div class="result-value" id="withBenefits">0 сум</div>
+                        <div>
+                            <label>Себестоимость и прочие расходы (без ФОТ):</label>
+                            <input type="number" id="costs" class="calc-input" placeholder="Напр. 900 000 000" oninput="calculateTaxes()" />
+                        </div>
+                        <div>
+                            <label>Фонд оплаты труда (ФОТ):</label>
+                            <input type="number" id="payroll" class="calc-input" placeholder="Напр. 600 000 000" oninput="calculateTaxes()" />
+                        </div>
+                        <div>
+                            <label>Среднегодовая стоимость имущества (для налога на имущество не‑резидентов 1.5–2%):</label>
+                            <input type="number" id="propertyBase" class="calc-input" placeholder="Напр. 200 000 000" oninput="calculateTaxes()" />
+                        </div>
+                        <div>
+                            <label>Объем импортируемых IT‑услуг (для НДС на импорт у не‑резидентов 12%):</label>
+                            <input type="number" id="importIT" class="calc-input" placeholder="Напр. 300 000 000" oninput="calculateTaxes()" />
+                        </div>
+                        <div>
+                            <label>Таможенные платежи при импорте товаров (сумма):</label>
+                            <input type="number" id="customs" class="calc-input" placeholder="Если применимо для не‑резидентов" oninput="calculateTaxes()" />
                         </div>
                     </div>
-                    <div style="text-align:center;margin-top:20px;">
-                        <div style="font-weight:bold;font-size:1.2rem;color:#27ae60;">Экономия: <span id="savings">0 сум</span></div>
+
+                    <div style="display:flex;flex-wrap:wrap;gap:16px;align-items:center;margin:6px 0 10px;">
+                        <label style="display:flex;gap:8px;align-items:center;">
+                            <input type="checkbox" id="turnoverUnder1b" onchange="calculateTaxes()" />
+                            Оборот < 1 млрд (налог с оборота у не‑резидентов 4%)
+                        </label>
+                        <label style="display:flex;gap:8px;align-items:center;">
+                            <input type="checkbox" id="includeVAT" onchange="calculateTaxes()" />
+                            Включать НДС с продаж (12% у не‑резидентов) в «Итого налогов»
+                        </label>
+                        <label style="display:flex;gap:8px;align-items:center;">
+                            <input type="checkbox" id="includePIT" onchange="calculateTaxes()" />
+                            Включать НДФЛ из ФОТ (7.5% резиденты, 12% не‑резиденты) в «Итого налогов»
+                        </label>
+                        <div style="display:flex;gap:8px;align-items:center;">
+                            Ставка налога на имущество (не‑резиденты):
+                            <input type="number" id="propertyRate" class="calc-input" style="width:120px;" value="1.5" min="1.5" max="2" step="0.1" oninput="calculateTaxes()" />%
+                        </div>
+                    </div>
+
+                    <div class="calc-result" style="margin-top:20px;">
+                        <div class="result-card" id="residentBlock" style="text-align:left;">
+                            <div class="result-title" style="font-size:1.1rem;">Резиденты IT Park</div>
+                            <div id="resResident">Введите данные выше.</div>
+                        </div>
+                        <div class="result-card" id="nonResidentBlock" style="text-align:left;">
+                            <div class="result-title" style="font-size:1.1rem;">Не резиденты</div>
+                            <div id="resNonresident">Введите данные выше.</div>
+                        </div>
+                    </div>
+
+                    <div style="margin-top:12px;color:#7f8c8d;font-size:.9rem;line-height:1.4;">
+                        Примечание: НДФЛ удерживается из зарплаты сотрудников, а НДС — косвенный налог. По умолчанию они не уменьшают «Чистую прибыль», но могут быть включены в «Итого налогов» переключателями.
                     </div>
                 </div>
             </div>
@@ -363,13 +410,80 @@
                 else if(url.includes('ai.it-park.uz')) document.getElementById('iframeTitle').textContent='ИИ Консультант'; },1000);
         }
         function calculateTaxes(){
-            const income=parseFloat(document.getElementById('income').value)||0;
-            if(income>0){
-                const withoutBenefits=income*0.12; const withBenefits=income*0.01; const savings=withoutBenefits-withBenefits;
-                document.getElementById('withoutBenefits').textContent=new Intl.NumberFormat('uz-UZ').format(withoutBenefits)+' сум';
-                document.getElementById('withBenefits').textContent=new Intl.NumberFormat('uz-UZ').format(withBenefits)+' сум';
-                document.getElementById('savings').textContent=new Intl.NumberFormat('uz-UZ').format(savings)+' сум';
-            } else { document.getElementById('withoutBenefits').textContent='0 сум'; document.getElementById('withBenefits').textContent='0 сум'; document.getElementById('savings').textContent='0 сум'; }
+            const rev = +(document.getElementById('rev')?.value || 0);
+            const costs = +(document.getElementById('costs')?.value || 0);
+            const payroll = +(document.getElementById('payroll')?.value || 0);
+            const propertyBase = +(document.getElementById('propertyBase')?.value || 0);
+            const importIT = +(document.getElementById('importIT')?.value || 0);
+            const customs = +(document.getElementById('customs')?.value || 0);
+            const under1b = !!document.getElementById('turnoverUnder1b')?.checked;
+            const includeVAT = !!document.getElementById('includeVAT')?.checked;
+            const includePIT = !!document.getElementById('includePIT')?.checked;
+            const propertyRatePct = parseFloat(document.getElementById('propertyRate')?.value || '1.5');
+
+            const fmt = n => new Intl.NumberFormat('uz-UZ').format(Math.max(0, Math.round(n)) ) + ' сум';
+            const pct = v => (v*100).toFixed(1)+'%';
+
+            const RATES = {
+                resident: { pit: 0.075, profit: 0, vat: 0, social: 0, turnover_under_1b: 0, vat_import_it: 0, property: 0 },
+                nonresident: { pit: 0.12, profit: 0.15, vat: 0.12, social: 0.12, turnover_under_1b: 0.04, vat_import_it: 0.12, property: (propertyRatePct||1.5)/100 }
+            };
+
+            function compute(type){
+                const r = RATES[type];
+                const social = payroll * r.social;
+                const baseProfit = rev - costs - payroll - social; // до налога на прибыль
+                const profitTax = Math.max(0, baseProfit) * r.profit;
+                const turnoverTax = under1b ? rev * r.turnover_under_1b : 0;
+                const propertyTax = propertyBase * r.property;
+                const vatSales = rev * r.vat; // косвенный
+                const pit = payroll * r.pit; // удерживается из ФОТ
+                const vatImport = importIT * r.vat_import_it; // для не-резидентов
+                const customsPay = type==='nonresident' ? customs : 0; // резидентам «НЕТ»
+
+                let taxesTotal = social + profitTax + turnoverTax + propertyTax + vatImport + customsPay;
+                if(includeVAT) taxesTotal += vatSales;
+                if(includePIT) taxesTotal += pit;
+
+                const netProfit = rev - costs - payroll - social - profitTax - turnoverTax - propertyTax - vatImport - customsPay;
+                return {social, baseProfit, profitTax, turnoverTax, propertyTax, vatSales, pit, vatImport, customsPay, taxesTotal, netProfit};
+            }
+
+            const a = compute('resident');
+            const b = compute('nonresident');
+
+            function blockHTML(label, d, r){
+                return `
+                    <div class="result-title" style="margin-bottom:8px;">${label}</div>
+                    <div style="display:grid;grid-template-columns:1fr auto;gap:8px;line-height:1.5;">
+                        <div>Доход</div><div>${fmt(rev)}</div>
+                        <div>Себестоимость и прочие</div><div>${fmt(costs)}</div>
+                        <div>ФОТ</div><div>${fmt(payroll)}</div>
+                        <div>Социальный налог (${pct(r.social)})</div><div>${fmt(d.social)}</div>
+                        <div>База прибыли до налога</div><div>${fmt(d.baseProfit)}</div>
+                        <div>Налог на прибыль (${pct(r.profit)})</div><div>${fmt(d.profitTax)}</div>
+                        ${document.getElementById('turnoverUnder1b')?.checked ? `<div>Налог с оборота (${pct(r.turnover_under_1b)})</div><div>${fmt(d.turnoverTax)}</div>`:``}
+                        <div>Налог на имущество ${r.property?`(${pct(r.property)})`:''}</div><div>${fmt(d.propertyTax)}</div>
+                        <div>НДС на импорт IT‑услуг ${r.vat_import_it?`(${pct(r.vat_import_it)})`:''}</div><div>${fmt(d.vatImport)}</div>
+                        ${d.customsPay?`<div>Таможенные платежи</div><div>${fmt(d.customsPay)}</div>`:''}
+                        <div style="grid-column:1/-1;height:1px;background:#e9ecef;margin:6px 0;"></div>
+                        <div>НДС с продаж ${r.vat?`(${pct(r.vat)})`:''} ${includeVAT?'' : '<span style="color:#7f8c8d;">(не включен в итог)</span>'}</div><div>${fmt(d.vatSales)}</div>
+                        <div>НДФЛ из ФОТ ${r.pit?`(${pct(r.pit)})`:''} ${includePIT?'' : '<span style=\"color:#7f8c8d;\">(не включен в итог)</span>'}</div><div>${fmt(d.pit)}</div>
+                        <div style="grid-column:1/-1;height:1px;background:#e9ecef;margin:6px 0;"></div>
+                        <div style="font-weight:600;">Итого налогов</div><div style="font-weight:700;color:#27ae60;">${fmt(d.taxesTotal)}</div>
+                        <div style="font-weight:600;">Чистая прибыль</div><div style="font-weight:700;color:#27ae60;">${fmt(d.netProfit)}</div>
+                    </div>`;
+            }
+
+            const targetA = document.getElementById('resResident');
+            const targetB = document.getElementById('resNonresident');
+            if(!rev && !costs && !payroll && !propertyBase && !importIT && !customs){
+                targetA.textContent = 'Введите данные выше.';
+                targetB.textContent = 'Введите данные выше.';
+                return;
+            }
+            targetA.innerHTML = blockHTML('Резиденты IT Park', a, RATES.resident);
+            targetB.innerHTML = blockHTML('Не резиденты', b, RATES.nonresident);
         }
         window.onclick=function(e){ const ms=document.getElementsByClassName('modal'); for(let m of ms){ if(e.target===m){ closeModal(m.id);} } }
         document.addEventListener('touchstart', function(){}, true);
