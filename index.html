@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>IT Park Uzbekistan - Touch Panel (SVG Icons)</title>
+    <title>IT Park Uzbekistan — Touch Panel (SVG Icons)</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- SVG Sprite -->
+    <!-- SVG-спрайт (иконки разделов) -->
     <svg xmlns="http://www.w3.org/2000/svg" style="position:absolute;width:0;height:0;visibility:hidden" aria-hidden="true">
         <defs>
             <!-- Clipboard -->
@@ -38,7 +38,7 @@
                 <circle cx="15" cy="12" r="2" fill="#7dba28"/>
                 <path d="M4 16h16M10 6V3M14 6V3M8 20h8" stroke="#7dba28" stroke-width="2" stroke-linecap="round"/>
             </symbol>
-            <!-- Location pin -->
+            <!-- Pin -->
             <symbol id="icon-pin" viewBox="0 0 24 24">
                 <path d="M12 22s-7-6.268-7-12a7 7 0 1 1 14 0c0 5.732-7 12-7 12Z" fill="#7dba28" opacity=".18"/>
                 <circle cx="12" cy="10" r="3" fill="#7dba28" />
@@ -61,73 +61,24 @@
     </svg>
 
     <div class="header">
-        <!-- Language switcher (top-right) -->
+        <!-- Переключатель языка (вверху справа) -->
         <div class="topbar">
-            <nav class="lang-switch" aria-label="Language selector">
-                <!-- Russian (RU) -> index.html -->
+            <nav class="lang-switch" aria-label="Выбор языка">
                 <a href="index.html" hreflang="ru" lang="ru" title="Русский (RU)">
                     <span class="sr-only">Русский</span>
-                    <!-- Flag: Russia -->
-                    <svg viewBox="0 0 3 2" aria-hidden="true" role="img">
-                        <rect width="3" height="2" fill="#fff"/>
-                        <rect width="3" height="0.6667" y="0.6667" fill="#0039A6"/>
-                        <rect width="3" height="0.6667" y="1.3333" fill="#D52B1E"/>
-                    </svg>
+                    <span aria-hidden="true" style="font-size:1.1rem;">🇷🇺</span>
                 </a>
-                <!-- English (US) -> eng.html -->
                 <a href="eng.html" hreflang="en" lang="en" title="English (US)">
                     <span class="sr-only">English</span>
-                    <!-- Flag: United States -->
-                    <svg viewBox="0 0 7410 3900" aria-hidden="true" role="img">
-                        <rect width="7410" height="3900" fill="#b22234"/>
-                        <g fill="#fff">
-                            <path d="M0 300h7410v300H0zM0 900h7410v300H0zM0 1500h7410v300H0zM0 2100h7410v300H0zM0 2700h7410v300H0zM0 3300h7410v300H0z"/>
-                        </g>
-                        <rect width="2964" height="2100" fill="#3c3b6e"/>
-                        <!-- a simple star grid (not exact 50 for brevity-friendly rendering) -->
-                        <g fill="#fff">
-                            <g transform="scale(63)">
-                                <circle cx="16" cy="16" r="2"/>
-                                <circle cx="24" cy="24" r="2"/>
-                                <circle cx="32" cy="16" r="2"/>
-                                <circle cx="40" cy="24" r="2"/>
-                                <circle cx="48" cy="16" r="2"/>
-                                <circle cx="56" cy="24" r="2"/>
-                                <circle cx="16" cy="32" r="2"/>
-                                <circle cx="24" cy="40" r="2"/>
-                                <circle cx="32" cy="32" r="2"/>
-                                <circle cx="40" cy="40" r="2"/>
-                                <circle cx="48" cy="32" r="2"/>
-                                <circle cx="56" cy="40" r="2"/>
-                            </g>
-                        </g>
-                    </svg>
+                    <span aria-hidden="true" style="font-size:1.1rem;">🇺🇸</span>
                 </a>
-                <!-- Uzbek (UZ) -> uzb.html -->
                 <a href="uzb.html" hreflang="uz" lang="uz" title="Oʻzbekcha (UZ)">
                     <span class="sr-only">Oʻzbekcha</span>
-                    <!-- Flag: Uzbekistan -->
-                    <svg viewBox="0 0 5 3" aria-hidden="true" role="img">
-                        <rect width="5" height="3" fill="#1eb53a"/>
-                        <rect width="5" height="2" fill="#fff"/>
-                        <rect width="5" height="1.6" fill="#0099b5"/>
-                        <rect width="5" height="0.1" y="1.6" fill="#ce1126"/>
-                        <rect width="5" height="0.1" y="2" fill="#ce1126"/>
-                        <!-- crescent -->
-                        <circle cx="0.7" cy="0.5" r="0.28" fill="#fff"/>
-                        <circle cx="0.8" cy="0.5" r="0.23" fill="#0099b5"/>
-                        <!-- a few stars (stylized) -->
-                        <g fill="#fff">
-                            <circle cx="1.2" cy="0.22" r="0.035"/>
-                            <circle cx="1.35" cy="0.28" r="0.035"/>
-                            <circle cx="1.2" cy="0.34" r="0.035"/>
-                            <circle cx="1.05" cy="0.28" r="0.035"/>
-                        </g>
-                    </svg>
+                    <span aria-hidden="true" style="font-size:1.1rem;">🇺🇿</span>
                 </a>
             </nav>
         </div>
-        <div class="logo"><img src="IT PARK UZBEKISTAN.png" alt=""></div>
+        <div class="logo"><img src="IT PARK UZBEKISTAN.png" alt="Логотип IT Park Uzbekistan"></div>
     </div>
 
     <div class="container">
@@ -137,7 +88,7 @@
                     <svg class="icon" viewBox="0 0 24 24" role="img" aria-label="Программа OSS"><use href="#icon-clipboard"></use></svg>
                 </div>
                 <div class="card-title">Программа OSS</div>
-                <div class="card-description">Услуги по регистрации юридических лиц и сопровождению</div>
+                <div class="card-description">Регистрация юридического лица и полное сопровождение</div>
             </div>
 
             <div class="card" onclick="openModal('residentModal')">
@@ -145,7 +96,7 @@
                     <svg class="icon" viewBox="0 0 24 24" role="img" aria-label="Как стать резидентом"><use href="#icon-users"></use></svg>
                 </div>
                 <div class="card-title">Как стать резидентом?</div>
-                <div class="card-description">Узнайте пошаговый процесс получения статуса резидента IT Park</div>
+                <div class="card-description">Пошаговый процесс получения статуса резидента IT Park</div>
             </div>
 
             <div class="card" onclick="openModal('virtualOfficeModal')">
@@ -163,13 +114,14 @@
                 <div class="card-title">Калькулятор налогов</div>
                 <div class="card-description">Сравните налоговую нагрузку с льготами и без них</div>
             </div>
-            <!-- IT Visa Card (RU) -->
+
+            <!-- IT Visa Card -->
             <div class="card" onclick="openModal('itVisaModal')">
-            <div class="card-icon" aria-hidden="true">
-                <svg class="icon" viewBox="0 0 24 24" role="img" aria-label="IT Visa"><use href="#icon-globe"></use></svg>
-            </div>
-            <div class="card-title">IT Visa</div>
-            <div class="card-description">Виза для иностранных IT‑специалистов и их семей: право жить и работать в Узбекистане, льготы и поддержка</div>
+                <div class="card-icon" aria-hidden="true">
+                    <svg class="icon" viewBox="0 0 24 24" role="img" aria-label="IT Visa"><use href="#icon-globe"></use></svg>
+                </div>
+                <div class="card-title">IT Visa</div>
+                <div class="card-description">Виза для иностранных IT-специалистов и их семей: право жить и работать в Узбекистане, льготы и поддержка</div>
             </div>
 
             <div class="card" onclick="openModal('aiModal')">
@@ -177,12 +129,12 @@
                     <svg class="icon" viewBox="0 0 24 24" role="img" aria-label="ИИ консультант"><use href="#icon-robot"></use></svg>
                 </div>
                 <div class="card-title">FAQ</div>
-                <div class="card-description">Получите ответы на самые часто задаваемые вопросы</div>
+                <div class="card-description">Ответы на самые часто задаваемые вопросы</div>
             </div>
         </div>
     </div>
 
-    <!-- Resident Modal -->
+    <!-- Модал: Как стать резидентом -->
     <div id="residentModal" class="modal">
         <div class="modal-content">
             <div class="modal-header">
@@ -190,31 +142,31 @@
                 <span class="close" onclick="closeModal('residentModal')" aria-label="Закрыть">&times;</span>
             </div>
             <div class="modal-body">
-                <p><strong>Для получения статуса резидента IT Park необходимо поэтапно заполнить информацию при подаче бизнес-плана:</strong></p>
+                <p><strong>Чтобы получить статус резидента IT Park, поэтапно заполните бизнес-план:</strong></p>
                 <div class="steps">
-                    <div class="step"><div class="step-number">1-й этап:</div> Заполнение информации о компании</div>
-                    <div class="step"><div class="step-number">2-й этап:</div> Указание направления деятельности компании</div>
-                    <div class="step"><div class="step-number">3-й этап:</div> Организационный план компании</div>
+                    <div class="step"><div class="step-number">1-й этап:</div> Информация о компании</div>
+                    <div class="step"><div class="step-number">2-й этап:</div> Направления деятельности</div>
+                    <div class="step"><div class="step-number">3-й этап:</div> Организационный план</div>
                     <div class="step"><div class="step-number">4-й этап:</div> Финансовый план</div>
                     <div class="step"><div class="step-number">5-й этап:</div> План закупок (при наличии)</div>
                     <div class="step"><div class="step-number">6-й этап:</div> Официальный веб-сайт (при наличии)</div>
                 </div>
                 <div class="qr-section">
                     <h3>Подать заявку</h3>
-                    <p>Отсканируйте QR-код для перехода к подаче заявки</p>
-                    <div class="qr-code"><img src="resident-cabinet.gif" alt="resident cabinet"></div>
+                    <p>Отсканируйте QR-код, чтобы перейти к подаче заявки</p>
+                    <div class="qr-code"><img src="resident-cabinet.gif" alt="QR резидент-кабинет"></div>
                     <button class="btn" onclick="showIframe('https://my.it-park.uz/resident-cabinet')">Открыть форму заявки</button>
                 </div>
                 <div class="qr-section">
                     <h3>Связаться с отделом регистрации</h3>
-                    <p>Отсканируйте QR-код для связи с отделом регистрации</p>
-                    <div class="qr-code"><img src="mukhammadyusuf.gif" alt="resident cabinet"></div>
+                    <p>Отсканируйте QR-код для связи</p>
+                    <div class="qr-code"><img src="mukhammadyusuf.gif" alt="QR отдел регистрации"></div>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- OSS Modal -->
+    <!-- Модал: OSS -->
     <div id="ossModal" class="modal">
         <div class="modal-content">
             <div class="modal-header">
@@ -223,22 +175,22 @@
             </div>
             <div class="modal-body">
                 <div class="steps">
-                    <div class="step"><div class="step-number">Регистрация юридического лица</div>Полное сопровождение процесса регистрации вашей компании</div>
-                    <div class="step"><div class="step-number">Подготовка первоначальных документов</div>Устав, решение, учредительный договор, приказ о назначении директора (бухгалтера)</div>
-                    <div class="step"><div class="step-number">Получение ПИНФЛ через доверенность</div>Оформление всех необходимых идентификационных документов</div>
-                    <div class="step"><div class="step-number">Открытие банковского счета</div>Помощь в выборе банка и открытии расчетного счета</div>
+                    <div class="step"><div class="step-number">Регистрация юридического лица</div> Полное сопровождение процесса регистрации вашей компании</div>
+                    <div class="step"><div class="step-number">Подготовка первоначальных документов</div> Устав, решение, учредительный договор, приказы о назначении директора (и бухгалтера)</div>
+                    <div class="step"><div class="step-number">Получение ПИНФЛ по доверенности</div> Оформление всех необходимых идентификационных документов</div>
+                    <div class="step"><div class="step-number">Открытие банковского счета</div> Помощь в выборе банка и открытии расчетного счета</div>
                 </div>
 
                 <div class="qr-section">
                     <h3>Подать заявку на OSS</h3>
                     <p>Отсканируйте QR-код для подачи заявки</p>
-                    <div class="qr-code"><img src="oss.gif" alt="qr code"></div>
-                    <button class="btn" onclick="showIframe('https://my.it-park.uz/oss')">Подать заявку</button>
+                    <div class="qr-code"><img src="oss.gif" alt="QR заявка OSS"></div>
+                    <button class="btn" onclick="showIframe('https://my.it-ark.uz/oss')">Подать заявку</button>
                 </div>
                 <div class="qr-section">
                     <h3>Связаться с менеджером</h3>
-                    <p>Отсканируйте QR-код для связи с менеджером</p>
-                    <div class="qr-code"><img src="nizomiddin.gif" alt="resident cabinet"></div>
+                    <p>Отсканируйте QR-код для связи</p>
+                    <div class="qr-code"><img src="nizomiddin.gif" alt="QR менеджер OSS"></div>
                 </div>
 
                 <div class="contact-info">
@@ -247,7 +199,7 @@
                         <div class="contact-icon">
                             <svg class="icon-sm" viewBox="0 0 24 24" role="img" aria-label="Адрес"><use href="#icon-pin"></use></svg>
                         </div>
-                        <div>Узбекистан, город Ташкент, улица Тепамасжид, дом 4, 100164</div>
+                        <div>Узбекистан, г. Ташкент, ул. Тепамасжид, дом 4, 100164</div>
                     </div>
                     <div class="contact-item">
                         <div class="contact-icon">
@@ -272,7 +224,7 @@
         </div>
     </div>
 
-    <!-- Virtual Office Modal -->
+    <!-- Модал: Виртуальный офис -->
     <div id="virtualOfficeModal" class="modal">
         <div class="modal-content">
             <div class="modal-header">
@@ -281,24 +233,24 @@
             </div>
             <div class="modal-body">
                 <h3>Virtual Office</h3>
-                <p>Виртуальный офис позволяет успешно осуществлять деятельность без следующих условий:</p>
+                <p>Виртуальный офис позволяет успешно работать без следующих условий:</p>
                 <div class="steps">
                     <div class="step">поиск подходящего офиса</div>
                     <div class="step">оплата дорогой аренды</div>
                     <div class="step">содержание офисных помещений</div>
                     <div class="step">оплата коммунальных услуг</div>
-                    <div class="step">найм офис-менеджера и охраны</div>
+                    <div class="step">наём офис-менеджера и охраны</div>
                 </div>
                 <div class="qr-section">
                     <h3>Связаться с менеджером</h3>
-                    <p>Отсканируйте QR-код для связи с менеджером</p>
-                    <div class="qr-code"><img src="jamshid.gif" alt="resident cabinet"></div>
+                    <p>Отсканируйте QR-код для связи</p>
+                    <div class="qr-code"><img src="jamshid.gif" alt="QR менеджер Virtual Office"></div>
                 </div>
                 <div class="contact-info">
                     <h3>Контактная информация</h3>
                     <div class="contact-item">
                         <div class="contact-icon"><svg class="icon-sm" viewBox="0 0 24 24" aria-label="Адрес"><use href="#icon-pin"/></svg></div>
-                        <div>Узбекистан, город Ташкент, улица Тепамасжид, дом 4, 100164</div>
+                        <div>Узбекистан, г. Ташкент, ул. Тепамасжид, дом 4, 100164</div>
                     </div>
                     <div class="contact-item">
                         <div class="contact-icon"><svg class="icon-sm" viewBox="0 0 24 24" aria-label="Телефон"><use href="#icon-phone"/></svg></div>
@@ -317,31 +269,30 @@
         </div>
     </div>
 
-    <!-- IT Visa Modal (RU) -->
+    <!-- Модал: IT Visa -->
     <div id="itVisaModal" class="modal">
-    <div class="modal-content">
-        <div class="modal-header">
-        <h2 class="modal-title">IT Visa</h2>
-        <span class="close" onclick="closeModal('itVisaModal')" aria-label="Закрыть">&times;</span>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">IT Visa</h2>
+                <span class="close" onclick="closeModal('itVisaModal')" aria-label="Закрыть">&times;</span>
+            </div>
+            <div class="modal-body">
+                <p><strong>IT VISA — виза для иностранных IT-специалистов и их семей. Даёт право жить и работать в Узбекистане, а также пользоваться льготами и программами поддержки.</strong></p>
+                <div class="steps">
+                    <div class="step"><div class="step-number">Кто может подать</div> Иностранные IT-специалисты, основатели и ключевые сотрудники IT-компаний</div>
+                    <div class="step"><div class="step-number">Что даёт</div> Право проживания и работы, доступ к льготам и программам поддержки</div>
+                    <div class="step"><div class="step-number">Как подать</div> Подготовьте документы и отправьте заявку онлайн</div>
+                </div>
+                <div class="qr-section">
+                    <h3>Контакт для связи</h3>
+                    <p>Сканируйте QR или перейдите по кнопке, чтобы написать в Telegram</p>
+                    <div class="qr-code"><img src="it-visa.gif" alt="Telegram QR: @millenial555"></div>
+                </div>
+            </div>
         </div>
-        <div class="modal-body">
-        <p><strong>IT VISA — виза для иностранных IT‑специалистов и их семей, даёт право жить и работать в Узбекистане, а также пользоваться льготами и поддержкой для IT‑специалистов.</strong></p>
-        <div class="steps">
-            <div class="step"><div class="step-number">Кто может подать</div>Иностранные IT‑специалисты, основатели и ключевые сотрудники IT‑компаний</div>
-            <div class="step"><div class="step-number">Что даёт</div>Право проживания и работы, доступ к льготам и программам поддержки</div>
-            <div class="step"><div class="step-number">Как подать</div>Подготовьте документы и отправьте заявку онлайн</div>
-        </div>
-        <div class="qr-section">
-            <h3>Контакт для связи</h3>
-            <p>Сканируйте QR или перейдите по кнопке, чтобы написать в Telegram</p>
-            <!-- Подложи свой QR PNG, если есть -->
-            <div class="qr-code"><img src="it-visa.gif" alt="Telegram QR: @millenial555"></div>
-        </div>
-        </div>
-    </div>
     </div>
 
-    <!-- AI Modal -->
+    <!-- Модал: FAQ / ИИ консультант -->
     <div id="aiModal" class="modal">
         <div class="modal-content">
             <div class="modal-header">
@@ -355,18 +306,18 @@
                     </div>
                     <h3>FAQ</h3>
                     <button class="btn" onclick="showIframe('https://it-park.ish.uz/faq')">Часто задаваемые вопросы</button>
-                    <p style="margin:20px 0;">Получите персональные консультации и ответы на ваши вопросы от нашего ИИ помощника</p>
+                    <p style="margin:20px 0;">Получите персональные консультации и ответы от нашего ИИ-помощника</p>
                 </div>
                 <div class="qr-section">
-                    <h3>Открыть чат с ИИ консультантом</h3>
-                    <p>Отсканируйте QR-код для подачи заявки</p>
-                    <div class="qr-code"><img src="ai-assistant.gif" alt="qr code"></div>
+                    <h3>Открыть чат с ИИ-консультантом</h3>
+                    <p>Отсканируйте QR-код, чтобы начать</p>
+                    <div class="qr-code"><img src="ai-assistant.gif" alt="QR чат с ИИ"></div>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Iframe Modal -->
+    <!-- Модал: Iframe -->
     <div id="iframeModal" class="modal">
         <div class="modal-content">
             <div class="modal-header">
@@ -380,93 +331,36 @@
     </div>
 
     <script>
-        function openModal(id){ document.getElementById(id).style.display='block'; document.body.style.overflow='hidden'; }
-        function closeModal(id){ document.getElementById(id).style.display='none'; document.body.style.overflow='auto'; if(id==='iframeModal'){ document.getElementById('modalIframe').src=''; } }
+        function openModal(id){
+            document.getElementById(id).style.display='block';
+            document.body.style.overflow='hidden';
+        }
+        function closeModal(id){
+            document.getElementById(id).style.display='none';
+            document.body.style.overflow='auto';
+            if(id==='iframeModal'){ document.getElementById('modalIframe').src=''; }
+        }
+        // Используем только инструменты, работающие в iframe (калькулятор открывается в iframe)
         function showIframe(url){
-            document.getElementById('modalIframe').src=url; document.getElementById('iframeTitle').textContent='Загрузка...'; openModal('iframeModal');
-            setTimeout(()=>{ if(url.includes('resident-cabinet')) document.getElementById('iframeTitle').textContent='Кабинет резидента';
-                else if(url.includes('faq')) document.getElementById('iframeTitle').textContent='Часто задаваемые вопросы';
-                else if(url.includes('/oss')) document.getElementById('iframeTitle').textContent='Программа OSS';
-                else if(url.includes('#calculate')) document.getElementById('iframeTitle').textContent='Калькулятор налогов';
-                else if(url.includes('ai.it-park.uz')) document.getElementById('iframeTitle').textContent='ИИ Консультант'; },1000);
+            const iframe = document.getElementById('modalIframe');
+            const title = document.getElementById('iframeTitle');
+            iframe.src = url;
+            title.textContent = 'Загрузка...';
+            openModal('iframeModal');
+            setTimeout(()=>{
+                if(url.includes('resident-cabinet')) title.textContent='Кабинет резидента';
+                else if(url.includes('faq')) title.textContent='Часто задаваемые вопросы';
+                else if(url.includes('/oss')) title.textContent='Программа OSS';
+                else if(url.includes('#calculate')) title.textContent='Калькулятор налогов';
+                else if(url.includes('ai.it-park.uz')) title.textContent='ИИ-консультант';
+            }, 1000);
         }
-        function calculateTaxes(){
-            const rev = +(document.getElementById('rev')?.value || 0);
-            const costs = +(document.getElementById('costs')?.value || 0);
-            const payroll = +(document.getElementById('payroll')?.value || 0);
-            const propertyBase = +(document.getElementById('propertyBase')?.value || 0);
-            const importIT = +(document.getElementById('importIT')?.value || 0);
-            const customs = +(document.getElementById('customs')?.value || 0);
-            const under1b = !!document.getElementById('turnoverUnder1b')?.checked;
-            const includeVAT = !!document.getElementById('includeVAT')?.checked;
-            const includePIT = !!document.getElementById('includePIT')?.checked;
-            const propertyRatePct = parseFloat(document.getElementById('propertyRate')?.value || '1.5');
-
-            const fmt = n => new Intl.NumberFormat('uz-UZ').format(Math.max(0, Math.round(n)) ) + ' сум';
-            const pct = v => (v*100).toFixed(1)+'%';
-
-            const RATES = {
-                resident: { pit: 0.075, profit: 0, vat: 0, social: 0, turnover_under_1b: 0, vat_import_it: 0, property: 0 },
-                nonresident: { pit: 0.12, profit: 0.15, vat: 0.12, social: 0.12, turnover_under_1b: 0.04, vat_import_it: 0.12, property: (propertyRatePct||1.5)/100 }
-            };
-
-            function compute(type){
-                const r = RATES[type];
-                const social = payroll * r.social;
-                const baseProfit = rev - costs - payroll - social; // до налога на прибыль
-                const profitTax = Math.max(0, baseProfit) * r.profit;
-                const turnoverTax = under1b ? rev * r.turnover_under_1b : 0;
-                const propertyTax = propertyBase * r.property;
-                const vatSales = rev * r.vat; // косвенный
-                const pit = payroll * r.pit; // удерживается из ФОТ
-                const vatImport = importIT * r.vat_import_it; // для не-резидентов
-                const customsPay = type==='nonresident' ? customs : 0; // резидентам «НЕТ»
-
-                let taxesTotal = social + profitTax + turnoverTax + propertyTax + vatImport + customsPay;
-                if(includeVAT) taxesTotal += vatSales;
-                if(includePIT) taxesTotal += pit;
-
-                const netProfit = rev - costs - payroll - social - profitTax - turnoverTax - propertyTax - vatImport - customsPay;
-                return {social, baseProfit, profitTax, turnoverTax, propertyTax, vatSales, pit, vatImport, customsPay, taxesTotal, netProfit};
-            }
-
-            const a = compute('resident');
-            const b = compute('nonresident');
-
-            function blockHTML(label, d, r){
-                return `
-                    <div class="result-title" style="margin-bottom:8px;">${label}</div>
-                    <div style="display:grid;grid-template-columns:1fr auto;gap:8px;line-height:1.5;">
-                        <div>Доход</div><div>${fmt(rev)}</div>
-                        <div>Себестоимость и прочие</div><div>${fmt(costs)}</div>
-                        <div>ФОТ</div><div>${fmt(payroll)}</div>
-                        <div>Социальный налог (${pct(r.social)})</div><div>${fmt(d.social)}</div>
-                        <div>База прибыли до налога</div><div>${fmt(d.baseProfit)}</div>
-                        <div>Налог на прибыль (${pct(r.profit)})</div><div>${fmt(d.profitTax)}</div>
-                        ${document.getElementById('turnoverUnder1b')?.checked ? `<div>Налог с оборота (${pct(r.turnover_under_1b)})</div><div>${fmt(d.turnoverTax)}</div>`:``}
-                        <div>Налог на имущество ${r.property?`(${pct(r.property)})`:''}</div><div>${fmt(d.propertyTax)}</div>
-                        <div>НДС на импорт IT‑услуг ${r.vat_import_it?`(${pct(r.vat_import_it)})`:''}</div><div>${fmt(d.vatImport)}</div>
-                        ${d.customsPay?`<div>Таможенные платежи</div><div>${fmt(d.customsPay)}</div>`:''}
-                        <div style="grid-column:1/-1;height:1px;background:#e9ecef;margin:6px 0;"></div>
-                        <div>НДС с продаж ${r.vat?`(${pct(r.vat)})`:''} ${includeVAT?'' : '<span style="color:#7f8c8d;">(не включен в итог)</span>'}</div><div>${fmt(d.vatSales)}</div>
-                        <div>НДФЛ из ФОТ ${r.pit?`(${pct(r.pit)})`:''} ${includePIT?'' : '<span style="color:#7f8c8d;">(не включен в итог)</span>'}</div><div>${fmt(d.pit)}</div>
-                        <div style="grid-column:1/-1;height:1px;background:#e9ecef;margin:6px 0;"></div>
-                        <div style="font-weight:600;">Итого налогов</div><div style="font-weight:700;color:#7dba28;">${fmt(d.taxesTotal)}</div>
-                        <div style="font-weight:600;">Чистая прибыль</div><div style="font-weight:700;color:#7dba28;">${fmt(d.netProfit)}</div>
-                    </div>`;
-            }
-
-            const targetA = document.getElementById('resResident');
-            const targetB = document.getElementById('resNonresident');
-            if(!rev && !costs && !payroll && !propertyBase && !importIT && !customs){
-                targetA.textContent = 'Введите данные выше.';
-                targetB.textContent = 'Введите данные выше.';
-                return;
-            }
-            targetA.innerHTML = blockHTML('Резиденты IT Park', a, RATES.resident);
-            targetB.innerHTML = blockHTML('Не резиденты', b, RATES.nonresident);
-        }
-        window.onclick=function(e){ const ms=document.getElementsByClassName('modal'); for(let m of ms){ if(e.target===m){ closeModal(m.id);} } }
+        // Закрытие по клику вне модального окна
+        window.onclick=function(e){
+            const ms=document.getElementsByClassName('modal');
+            for(let m of ms){ if(e.target===m){ closeModal(m.id);} }
+        };
+        // iOS Safari tap-fix
         document.addEventListener('touchstart', function(){}, true);
     </script>
 </body>
