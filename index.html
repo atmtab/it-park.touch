@@ -459,6 +459,7 @@
             setTimeout(()=>{ if(url.includes('resident-cabinet')) document.getElementById('iframeTitle').textContent='Кабинет резидента';
                 else if(url.includes('faq')) document.getElementById('iframeTitle').textContent='Часто задаваемые вопросы';
                 else if(url.includes('/oss')) document.getElementById('iframeTitle').textContent='Программа OSS';
+                else if(url.includes('#calculate')) document.getElementById('iframeTitle').textContent='Программа OSS';
                 else if(url.includes('ai.it-park.uz')) document.getElementById('iframeTitle').textContent='ИИ Консультант'; },1000);
         }
         function calculateTaxes(){
